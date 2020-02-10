@@ -6,7 +6,7 @@ const Firebase = {
   initializeDB: () => {
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
-      databaseURL: "https://fir-test-b3501.firebaseio.com"
+      databaseURL: "https://fir-todos-4f7c6.firebaseio.com"
     })
   },
   db: () => {

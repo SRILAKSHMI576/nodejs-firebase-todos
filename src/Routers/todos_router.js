@@ -66,4 +66,16 @@ todoRouter.put("/:id", function(req, res) {
   });
 })
 
+// Delete detail
+todoRouter.delete("/:id", function(req, res) {
+  const id = req.params.id
+  Firebase.db().ref(`todo/${id}`).remove()
+  .then(() => {
+    res.send({status: "ok"})
+  })
+  .catch(e => {
+    res.status(500).send()
+  })
+})
+
 module.exports = todoRouter
